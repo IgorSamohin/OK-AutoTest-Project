@@ -1,22 +1,41 @@
 package Pages;
 
 
+import Tools.TechnopolisBot;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class LoginPage extends BasePage {
 
+    private final By LOGIN_BUTTON = By.cssSelector("div.form-actions > div > input.button-pro.__wide");
+    private final By LOGIN_FIELD = By.id("field_email");
+    private final By PASSWORD_FIELD = By.id("field_password");
+
     public LoginPage(WebDriver driver) {
         super(driver);
     }
 
-    public static UserMainPage doLogin(WebDriver driver, String login, String password) {
-        driver.findElement(By.id("field_email")).clear();
-        driver.findElement(By.id("field_email")).sendKeys(login); // "technopolisbot"
-        driver.findElement(By.id("field_password")).clear();
-        driver.findElement(By.id("field_password")).sendKeys(password); //"technopolis16"
-        driver.findElement(By.cssSelector("div.form-actions > div > input.button-pro.__wide")).click();
-        UserMainPage userMainPage = new UserMainPage(driver);
-        return userMainPage;
+    public UserMainPage doLogin(TechnopolisBot user) {
+        driver.findElement(LOGIN_FIELD).clear();
+        driver.findElement(LOGIN_FIELD).sendKeys(user.LOGIN);
+
+        driver.findElement(PASSWORD_FIELD).clear();
+        driver.findElement(PASSWORD_FIELD).sendKeys(user.PASSWORD);
+
+        driver.findElement(LOGIN_BUTTON).click();
+
+        return new UserMainPage(driver);
+    }
+
+    public UserMainPage doLogin(String login, String password){
+        driver.findElement(LOGIN_FIELD).clear();
+        driver.findElement(LOGIN_FIELD).sendKeys(login);
+
+        driver.findElement(PASSWORD_FIELD).clear();
+        driver.findElement(PASSWORD_FIELD).sendKeys(password);
+
+        driver.findElement(LOGIN_BUTTON).click();
+
+        return new UserMainPage(driver);
     }
 }
