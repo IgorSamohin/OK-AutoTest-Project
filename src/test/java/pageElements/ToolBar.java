@@ -1,5 +1,7 @@
-package Pages;
+package pageElements;
 
+import Pages.MusicMainPage;
+import Pages.UserMainPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 

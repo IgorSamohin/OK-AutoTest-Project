@@ -7,6 +7,7 @@ import org.openqa.selenium.interactions.Actions;
 
 public abstract class BasePage {
     protected WebDriver driver;
+    protected ToolBar toolBar;
 
     public BasePage(WebDriver driver) {
         this.driver = driver;
