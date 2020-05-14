@@ -1,6 +1,7 @@
 package Pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -20,13 +21,13 @@ public abstract class BasePage {
         driver.findElement(locator).sendKeys(text);
     }
 
-    protected void click(By locator) {
+    protected void click(By locator) throws TimeoutException {
         (new WebDriverWait(driver, EXPLICIT_WAIT_TIME_IN_SECONDS))
                 .until(ExpectedConditions.presenceOfElementLocated(locator))
                 .click();
     }
 
-    protected void clickBy(By locator, int xOffSet, int yOffSet) {
+    protected void clickBy(By locator, int xOffSet, int yOffSet)  throws TimeoutException {
         WebElement webElement = (new WebDriverWait(driver, EXPLICIT_WAIT_TIME_IN_SECONDS))
                 .until(ExpectedConditions.presenceOfElementLocated(locator));
         Actions builder = new Actions(driver);
