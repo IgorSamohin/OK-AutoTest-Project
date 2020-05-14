@@ -14,18 +14,19 @@ public class ToolBar {
     public ToolBar(WebDriver driver){
         this.driver = driver;
     }
-    protected void click(By locator) {
+    protected void click(By locator) { //TODO add check for item with the locator
         driver.findElement(locator).click();
     }
 
-    protected UserMainPage clickOnUserMainPage(){
+    public UserMainPage clickOnUserMainPage(){
         click(GO_TO_MUSIC_MAIN_PAGE_BUTTON_LOCATOR);
         return (new UserMainPage(driver));
     }
 
-    protected MusicMainPage clickOnMusicMainPage(){
+    public MusicMainPage clickOnMusicMainPage(){
         click(GO_TO_MAIN_PAGE_BUTTON_LOCATOR);
         return (new MusicMainPage(driver)); // TODO add driver
     }
+
 
 }
