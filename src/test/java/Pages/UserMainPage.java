@@ -13,7 +13,7 @@ public class UserMainPage extends OkPage {
         super(driver);
     }
 
-    public static LoginPage doLogout(WebDriver driver) {
+    public LoginPage doLogout() {
         driver.findElement(By.xpath(USER_PROPERTIES_WINDOW_XPATH)).click();
         driver.findElement(By.xpath(USER_LOGOUT_XPATH)).click();
         driver.findElement(By.xpath(CONFIRM_EXIT)).click();

@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 
 public class LoginPage extends BasePage {
 
-    private final By LOGIN_BUTTON = By.cssSelector("div.form-actions > div > input.button-pro.__wide");
+    private final By LOGIN_BUTTON = By.cssSelector("div.form-actions > div > input.button-pro.__wide"); //TODO rewrite
     private final By LOGIN_FIELD = By.id("field_email");
     private final By PASSWORD_FIELD = By.id("field_password");
 

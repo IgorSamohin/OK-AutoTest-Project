@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public abstract class BasePage {
-    protected int EXPLICIT_WAIT_TIME_IN_SECONDS = 5;
+    protected int EXPLICIT_WAIT_TIME_IN_SECONDS = 1;
     protected WebDriver driver;
 
     public BasePage(WebDriver driver) {
@@ -22,7 +22,7 @@ public abstract class BasePage {
     }
 
     protected void click(By locator) throws TimeoutException {
-        (new WebDriverWait(driver, EXPLICIT_WAIT_TIME_IN_SECONDS))
+        new WebDriverWait(driver, EXPLICIT_WAIT_TIME_IN_SECONDS)
                 .until(ExpectedConditions.presenceOfElementLocated(locator))
                 .click();
     }
