@@ -4,10 +4,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public abstract class BasePage {
+    protected int EXPLICIT_WAIT_TIME_IN_SECONDS = 5;
     protected WebDriver driver;
-    protected ToolBar toolBar;
 
     public BasePage(WebDriver driver) {
         this.driver = driver;
@@ -19,11 +21,14 @@ public abstract class BasePage {
     }
 
     protected void click(By locator) {
-        driver.findElement(locator).click();
+        (new WebDriverWait(driver, EXPLICIT_WAIT_TIME_IN_SECONDS))
+                .until(ExpectedConditions.presenceOfElementLocated(locator))
+                .click();
     }
 
     protected void clickBy(By locator, int xOffSet, int yOffSet) {
-        WebElement webElement = driver.findElement(locator);
+        WebElement webElement = (new WebDriverWait(driver, EXPLICIT_WAIT_TIME_IN_SECONDS))
+                .until(ExpectedConditions.presenceOfElementLocated(locator));
         Actions builder = new Actions(driver);
         builder.moveToElement(webElement, xOffSet, yOffSet).click().build().perform();
     }

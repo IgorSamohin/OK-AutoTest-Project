@@ -16,18 +16,10 @@ public class LoginPage extends BasePage {
     }
 
     public UserMainPage doLogin(TechnopolisBot user) {
-        driver.findElement(LOGIN_FIELD).clear();
-        driver.findElement(LOGIN_FIELD).sendKeys(user.LOGIN);
-
-        driver.findElement(PASSWORD_FIELD).clear();
-        driver.findElement(PASSWORD_FIELD).sendKeys(user.PASSWORD);
-
-        driver.findElement(LOGIN_BUTTON).click();
-
-        return new UserMainPage(driver);
+        return doLogin(user.LOGIN, user.PASSWORD);
     }
 
-    public UserMainPage doLogin(String login, String password){
+    public UserMainPage doLogin(String login, String password) {
         driver.findElement(LOGIN_FIELD).clear();
         driver.findElement(LOGIN_FIELD).sendKeys(login);
 
