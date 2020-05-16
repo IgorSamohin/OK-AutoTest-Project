@@ -22,7 +22,7 @@ public class TestBase {
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(4, TimeUnit.SECONDS);
         driver.get(baseUrl + "/dk?st.cmd=anonymMain&st.layer.cmd=PopLayerClose");
-
+        driver.manage().window().maximize();
         userMainPage = new LoginPage(driver)
                 .doLogin(new TechnopolisBot());
     }
