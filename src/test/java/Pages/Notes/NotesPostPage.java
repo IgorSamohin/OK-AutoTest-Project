@@ -28,7 +28,7 @@ public class NotesPostPage extends BasePage {
 
     public NotesPostPage writePost(String text) {
         click(TEXT_FIELD_LOCATOR);
-        type(TEXT_FIELD_LOCATOR, text);
+        type(text, TEXT_FIELD_LOCATOR);
         return this;
     }
 

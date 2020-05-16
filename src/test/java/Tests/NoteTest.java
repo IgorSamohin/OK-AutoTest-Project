@@ -37,8 +37,8 @@ public class NoteTest extends TestBase {
     @Override
     @After
     public void tierDown(){
-        driver.get(baseUrl);
         new UserMainPage(driver)
+                .clickOnUserMainPage()
                 .goToNotesPage()
                 .deleteAllNotes();
 
