@@ -30,9 +30,8 @@ public class TestBase {
     @After
     public void tierDown() {
         driver.get(baseUrl);
-        new UserMainPage(driver)
-                .doLogout();
-       // driver.quit();
+        new UserMainPage(driver).doLogout();
+        driver.quit();
         String verificationErrorString = verificationErrors.toString();
         if (!"".equals(verificationErrorString)) {
             fail(verificationErrorString);
