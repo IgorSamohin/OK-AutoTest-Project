@@ -12,11 +12,11 @@ public class OkPage extends BasePage {
         toolBar = new ToolBar(driver);
     }
 
-    protected UserMainPage clickOnUserMainPage(){
+    public UserMainPage clickOnUserMainPage(){
         return toolBar.clickOnUserMainPage();
     }
 
-    protected MusicMainPage clickOnMusicMainPage(){
+    public MusicMainPage clickOnMusicMainPage(){
         return toolBar.clickOnMusicMainPage();
     }
 }
