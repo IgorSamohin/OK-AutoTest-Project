@@ -1,24 +1,28 @@
 package Tests;
 
 import Pages.LoginPage;
+import Pages.MusicMainPage;
 import Pages.UserMainPage;
 import Tools.TechnopolisBot;
 import org.junit.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 
 import static org.junit.Assert.fail;
 
 public class TestBase {
+
     WebDriver driver;
     protected UserMainPage userMainPage;
     private String baseUrl = "https://ok.ru";
     private StringBuffer verificationErrors = new StringBuffer();
 
     @Before
-    public void setUp() {
+    public void setUp(){
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(4, TimeUnit.SECONDS);
         driver.manage().window().maximize();
@@ -28,15 +32,17 @@ public class TestBase {
     }
 
     @After
-    public void tierDown() {
+    public void tierDown(){
         driver.get(baseUrl);
-        new UserMainPage(driver).doLogout();
+        new UserMainPage(driver)
+                .doLogout();
         driver.quit();
         String verificationErrorString = verificationErrors.toString();
         if (!"".equals(verificationErrorString)) {
             fail(verificationErrorString);
         }
     }
+
 }
 /**
  * TODO переделать ожидания

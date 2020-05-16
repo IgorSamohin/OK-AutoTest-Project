@@ -10,7 +10,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class ToolBar {
     private WebDriver driver;
     protected int EXPLICIT_WAIT_TIME_IN_SECONDS = 1;
-    private final By GO_TO_MAIN_PAGE_BUTTON_LOCATOR = By.xpath(""); //todo
+    private final By GO_TO_MAIN_PAGE_BUTTON_LOCATOR = By.xpath("//a[contains(@hrefattrs,'UserMain')]");
     private final By GO_TO_MUSIC_MAIN_PAGE_BUTTON_LOCATOR = By.xpath("//*[@class='toolbar_nav']//*[@data-l='t,music']//*[@data-l='musicLayerContainer,0.0.118']");
 
 
