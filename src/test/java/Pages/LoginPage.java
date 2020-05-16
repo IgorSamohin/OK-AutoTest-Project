@@ -1,6 +1,6 @@
 package Pages;
 
-
+import Pages.BasePages.*;
 import Tools.TechnopolisBot;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
