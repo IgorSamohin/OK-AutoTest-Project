@@ -1,17 +1,17 @@
 package Pages.Music;
 
-import Pages.OkPage;
+import Pages.BasePages.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import java.util.List;
 
-public class MusicMainPage extends OkPage {
+public class MusicMainPage extends MusicBasePage {
     private final By MY_MUSIC_BUTTON_XPATH = By.xpath("//*[@class='content_menu __60o4ct']//*[@data-l='t,library']");
-    private final String MUSIC_LIST_XPATH = "//wm-tracks-list2//wm-track";
-    private final String SONG_ADD_XPATH = ".//*[@data-l='t,track']//*[@data-l='t,add']";
-    private final String SONG_REMOVE_XPATH = ".//*[@data-l='t,track']//*[@data-l='t,remove']";
+    private final By MUSIC_LIST_XPATH = By.xpath("//wm-tracks-list2//wm-track");
+    private final By SONG_ADD_XPATH = By.xpath(".//*[@data-l='t,track']//*[@data-l='t,add']");
+    private final By SONG_REMOVE_XPATH = By.xpath(".//*[@data-l='t,track']//*[@data-l='t,remove']");
 
     public MusicMainPage(WebDriver driver) {
         super(driver);
@@ -22,14 +22,14 @@ public class MusicMainPage extends OkPage {
     }
 
     public List<WebElement> getMusicList() {
-        return driver.findElements(By.xpath(MUSIC_LIST_XPATH));
+        return driver.findElements(MUSIC_LIST_XPATH));
     }
 
     public void addTrackToFavorite(WebElement element) {
-        element.findElement(By.xpath(SONG_ADD_XPATH)).click();
+        element.findElement(SONG_ADD_XPATH).click();
     }
 
     public void removeTrackFromFavorite(WebElement element) {
-        element.findElement(By.xpath(SONG_REMOVE_XPATH)).click();
+        element.findElement(SONG_REMOVE_XPATH).click();
     }
 }
