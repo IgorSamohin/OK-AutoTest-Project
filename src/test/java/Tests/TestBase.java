@@ -17,7 +17,7 @@ import static org.junit.Assert.fail;
 public class TestBase {
 
     WebDriver driver;
-    private String baseUrl = "https://ok.ru";
+    protected String baseUrl = "https://ok.ru";
     private StringBuffer verificationErrors = new StringBuffer();
 
     @Before
@@ -43,14 +43,6 @@ public class TestBase {
         }
     }
 
-    @Test
-    public void sometest(){
-        try {
-            (new MusicMainPage(driver)).clickOnMyMusic();
-        }catch(Exception e) {
-            System.out.println("yep");
-        }
-    }
 }
 /**TODO переделать ожидания
  *
