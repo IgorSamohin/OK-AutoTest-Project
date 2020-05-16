@@ -14,10 +14,10 @@ public class GroupPage extends OkPage {
         super(driver);
     }
 
-    public GroupPage deleteGroup(){
+    public GroupMainPage deleteGroup(){
         click(GROUP_FAST_PREFERENCES_BUTTON_LOCATOR);
         click(DELETE_OPTION_LOCATOR);
         click(DELETE_SUBMIT_BUTTON_LOCATOR);
-        return (new GroupPage(driver));
+        return (new GroupMainPage(driver));
     }
 }
