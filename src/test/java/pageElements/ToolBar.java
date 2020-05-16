@@ -36,7 +36,7 @@ public class ToolBar {
         new WebDriverWait(driver, EXPLICIT_WAIT_TIME_IN_SECONDS)
                 .until(ExpectedConditions.presenceOfElementLocated(GO_TO_MAIN_PAGE_BUTTON_LOCATOR))
                 .click();
-        return (new MusicMainPage(driver)); // TODO add driver
+        return (new MusicMainPage(driver));
     }
 
 
