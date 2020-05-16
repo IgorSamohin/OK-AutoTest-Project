@@ -22,7 +22,7 @@ public class MusicMainPage extends MusicBasePage {
     }
 
     public List<WebElement> getMusicList() {
-        return driver.findElements(MUSIC_LIST_XPATH));
+        return driver.findElements(MUSIC_LIST_XPATH);
     }
 
     public void addTrackToFavorite(WebElement element) {
