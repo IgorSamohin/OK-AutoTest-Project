@@ -27,11 +27,12 @@ public abstract class BasePage {
                 .click();
     }
 
-    protected void type(By locator, String text){
-        driver.findElement(locator).clear();
-        for(char c : text.toCharArray()){
-            driver.findElement(locator).sendKeys("" + c);
-        }
+    protected void clickWithMouse(By locator)  throws TimeoutException {
+        WebElement element = (new WebDriverWait(driver, EXPLICIT_WAIT_TIME_IN_SECONDS))
+                .until(ExpectedConditions.visibilityOfElementLocated(locator));
+        Actions action = new Actions(driver);
+        action.moveToElement(element)
+                .click();
     }
 
     protected void clickBy(By locator, int xOffSet, int yOffSet)  throws TimeoutException {
