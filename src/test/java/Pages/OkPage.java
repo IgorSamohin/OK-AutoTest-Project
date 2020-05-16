@@ -1,6 +1,6 @@
 package Pages;
 
-import org.openqa.selenium.By;
+import Pages.Music.*;
 import org.openqa.selenium.WebDriver;
 import pageElements.ToolBar;
 

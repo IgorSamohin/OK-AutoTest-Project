@@ -1,9 +1,6 @@
 package Tests;
 
-import Pages.Groups.ChooseNewGroupTypeLayer;
-import Pages.Groups.GroupMainPage;
-import Pages.Groups.GroupPage;
-import Pages.Groups.NewGroupPreferencesPage;
+import Pages.Groups.*;
 import Pages.UserMainPage;
 import org.junit.After;
 import org.junit.Test;
