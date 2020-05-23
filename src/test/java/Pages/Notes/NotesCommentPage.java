@@ -13,6 +13,6 @@ public class NotesCommentPage extends OkPage {
     }
 
     public boolean areCommentsDisabled(){
-        return driver.findElement(COMMENT_LOCATOR).getAttribute("disabled").equals("true");
+        return !(driver.findElement(COMMENT_LOCATOR).getAttribute("disabled") == null);
     }
 }
