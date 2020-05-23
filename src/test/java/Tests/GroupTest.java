@@ -1,7 +1,6 @@
 package Tests;
 
 import Pages.Groups.*;
-import Pages.UserMainPage;
 import org.junit.After;
 import org.junit.Test;
 
@@ -14,8 +13,8 @@ public class GroupTest extends TestBase {
 
     @Test
     public void groupCreationTest() {
-        String groupName = "1";
-        String groupDescription = "2fdddd";
+        String groupName = "groupName";
+        String groupDescription = "groupDescription";
         //***************Test***************//
         //Go to all group page
         newGroupPreferencesPage = userMainPage.goToGroupPage()  //Go to all group page
@@ -28,15 +27,15 @@ public class GroupTest extends TestBase {
         groupPage = newGroupPreferencesPage.createGroup();
         //***************Check***************//
         //Checking group name, description and group type
-        if(!groupPage.getGroupName().equals(groupName)){
+        if (!groupPage.getGroupName().equals(groupName)) {
             System.err.println("Group name is not the same as expected\n");
             isFall = true;
         }
-        if(!groupPage.getGroupDescription().equals(groupDescription)){
+        if (!groupPage.getGroupDescription().equals(groupDescription)) {
             System.err.println("Group description is not the same as expected\n");
             isFall = true;
         }
-        if(!groupPage.isPublicGroup()){
+        if (!groupPage.isPublicGroup()) {
             System.err.println("Group type is not the same as expected");
             isFall = true;
         }
@@ -44,9 +43,9 @@ public class GroupTest extends TestBase {
 
     @Override
     @After
-    public void tierDown() {
+    public void tearDown() {
         //удаление текущей группы
         groupPage.deleteGroup();
-        super.tierDown();
+        super.tearDown();
     }
 }

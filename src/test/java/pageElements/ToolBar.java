@@ -14,23 +14,24 @@ public class ToolBar {
     private final By GO_TO_MUSIC_MAIN_PAGE_BUTTON_LOCATOR = By.xpath("//*[@class='toolbar_nav']//*[@data-l='t,music']//*[@data-l='musicLayerContainer,0.0.118']");
 
 
-    public ToolBar(WebDriver driver){
+    public ToolBar(WebDriver driver) {
         this.driver = driver;
     }
+
     public void click(By locator) {
         new WebDriverWait(driver, EXPLICIT_WAIT_TIME_IN_SECONDS)
                 .until(ExpectedConditions.presenceOfElementLocated(locator))
                 .click();
     }
 
-    public UserMainPage clickOnUserMainPage(){
+    public UserMainPage clickOnUserMainPage() {
         new WebDriverWait(driver, EXPLICIT_WAIT_TIME_IN_SECONDS)
                 .until(ExpectedConditions.presenceOfElementLocated(GO_TO_MAIN_PAGE_BUTTON_LOCATOR))
                 .click();
         return (new UserMainPage(driver));
     }
 
-    public MusicMainPage clickOnMusicMainPage(){
+    public MusicMainPage clickOnMusicMainPage() {
         new WebDriverWait(driver, EXPLICIT_WAIT_TIME_IN_SECONDS)
                 .until(ExpectedConditions.presenceOfElementLocated(GO_TO_MUSIC_MAIN_PAGE_BUTTON_LOCATOR))
                 .click();

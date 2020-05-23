@@ -11,7 +11,7 @@ public class ChooseNewGroupTypeLayer extends BasePage {
         super(driver);
     }
 
-    public NewGroupPreferencesPage choosePublicPage(){
+    public NewGroupPreferencesPage choosePublicPage() {
         click(PAGE_LOCATOR);
         return (new NewGroupPreferencesPage(driver));
     }

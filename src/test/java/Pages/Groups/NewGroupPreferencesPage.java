@@ -17,7 +17,7 @@ public class NewGroupPreferencesPage extends BasePage {
         super(driver);
     }
 
-    public void enterGroupName(String groupName){
+    public void enterGroupName(String groupName) {
         for (char c : groupName.toCharArray()) {
             new WebDriverWait(driver, 0, EXPLICIT_WAIT_TIME_IN_M_SEC);
             driver.findElement(GROUP_NAME_LOCATOR)
@@ -25,7 +25,7 @@ public class NewGroupPreferencesPage extends BasePage {
         }
     }
 
-    public void enterGroupDescription(String groupDescription){
+    public void enterGroupDescription(String groupDescription) {
         WebElement descriptionArea = driver.findElement(GROUP_DESCRIPTION_LOCATOR);
         click(GROUP_DESCRIPTION_LOCATOR);
         for (char c : groupDescription.toCharArray()) {
@@ -34,7 +34,7 @@ public class NewGroupPreferencesPage extends BasePage {
         }
     }
 
-    public GroupPage createGroup(){
+    public GroupPage createGroup() {
         click(CREATE_BUTTON_LOCATOR);
         return (new GroupPage(driver));
     }

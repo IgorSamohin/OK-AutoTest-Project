@@ -1,6 +1,6 @@
 package Pages.Notes;
 
-import Pages.BasePages.BasePage;
+import Pages.BasePages.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
@@ -19,6 +19,7 @@ public class NoteLayerPage extends BasePage {
 
     public NoteLayerPage(WebDriver driver) {
         super(driver);
+        init();
     }
 
     public NoteLayerPage forward(){

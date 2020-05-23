@@ -16,6 +16,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 public class UserMainPage extends OkPage {
+    private static final By NOTES_LOCATOR = By.xpath("//a[@data-l='t,userStatuses']");
     private static final By USER_PROPERTIES_WINDOW_LOCATOR = By.xpath("//*[@class='ucard-mini toolbar_ucard js-toolbar-menu']");
     private static final By USER_LOGOUT_LOCATOR = By.xpath("//*[@data-l='t,logoutCurrentUser']");
     private static final By CONFIRM_EXIT = By.xpath("//*[@data-l='t,confirm']");
@@ -43,12 +44,12 @@ public class UserMainPage extends OkPage {
         return (new LoginPage(driver));
     }
 
-    public GroupMainPage goToGroupPage(){
+    public GroupMainPage goToGroupPage() {
         click(GROUP_LOCATOR);
         return (new GroupMainPage(driver));
     }
 
-    public NotesPage goToNotesPage(){
+    public NotesPage goToNotesPage() {
         click(NOTES_LOCATOR);
         return new NotesPage(driver);
     }
@@ -62,6 +63,10 @@ public class UserMainPage extends OkPage {
     public boolean hasAvatar(){
         WebElement avatar = driver.findElement(AVATAR_LOCATOR);
         return avatar.findElements(By.xpath(".//img")).size() == 1;
+    }
+
+    public MusicMainPage goToMusicMainPage() {
+        return clickOnMusicMainPage();
     }
 
 }

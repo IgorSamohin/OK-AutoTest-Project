@@ -9,15 +9,15 @@ public class GroupPage extends OkPage {
     private final By DELETE_OPTION_LOCATOR = By.xpath("//*[contains(@class, 'svg-ic svg-ico_trash_16 null')]/parent::*/parent::*");
     private final By DELETE_SUBMIT_BUTTON_LOCATOR = By.xpath("//*[contains(@data-l, 't,confirm')]");
 
-    private final By GROUP_NAME_LOCATOR =  By.xpath("//*[contains(@class, 'group-name_t')]");
-    private final By GROUP_DESCRIPTION_LOCATOR =  By.xpath("//*[contains(@data-module, 'GroupInfoPanel')]");
-    private final By GROUP_TYPE_LOCATOR =  By.xpath("//*[contains(@class, 'group-name_info')]");
+    private final By GROUP_NAME_LOCATOR = By.xpath("//*[contains(@class, 'group-name_t')]");
+    private final By GROUP_DESCRIPTION_LOCATOR = By.xpath("//*[contains(@data-module, 'GroupInfoPanel')]");
+    private final By GROUP_TYPE_LOCATOR = By.xpath("//*[contains(@class, 'group-name_info')]");
 
     public GroupPage(WebDriver driver) {
         super(driver);
     }
 
-    public GroupMainPage deleteGroup(){
+    public GroupMainPage deleteGroup() {
         click(GROUP_FAST_PREFERENCES_BUTTON_LOCATOR);
         driver.findElement(DELETE_OPTION_LOCATOR).click();
         //clickWithMouse(DELETE_OPTION_LOCATOR); //todo why it is not working??
@@ -25,15 +25,15 @@ public class GroupPage extends OkPage {
         return (new GroupMainPage(driver));
     }
 
-    public String getGroupName(){
+    public String getGroupName() {
         return driver.findElement(GROUP_NAME_LOCATOR).getText();
     }
 
-    public String getGroupDescription(){
+    public String getGroupDescription() {
         return driver.findElement(GROUP_DESCRIPTION_LOCATOR).getText();
     }
 
-    public boolean isPublicGroup(){
+    public boolean isPublicGroup() {
         return (driver.findElement(GROUP_TYPE_LOCATOR).getText().equals("Публичная страница"));
     }
 }

@@ -7,9 +7,7 @@ import org.junit.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import java.io.IOException;
 import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
 
 import static org.junit.Assert.fail;
 
@@ -21,7 +19,7 @@ public class TestBase {
     private StringBuffer verificationErrors = new StringBuffer();
 
     @Before
-    public void setUp(){
+    public void setUp() {
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(4, TimeUnit.SECONDS);
         driver.manage().window().maximize();
@@ -31,7 +29,7 @@ public class TestBase {
     }
 
     @After
-    public void tierDown(){
+    public void tearDown() {
         driver.get(baseUrl);
         new UserMainPage(driver)
                 .doLogout();
