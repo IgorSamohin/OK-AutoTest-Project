@@ -1,6 +1,7 @@
 package Pages;
 
 import Pages.Groups.GroupMainPage;
+import Pages.BasePages.*;
 import Pages.Notes.NotesPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

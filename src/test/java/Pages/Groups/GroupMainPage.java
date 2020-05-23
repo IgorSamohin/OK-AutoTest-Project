@@ -1,6 +1,6 @@
 package Pages.Groups;
 
-import Pages.OkPage;
+import Pages.BasePages.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 

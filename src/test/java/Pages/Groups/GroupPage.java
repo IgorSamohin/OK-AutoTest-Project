@@ -1,9 +1,8 @@
 package Pages.Groups;
 
-import Pages.OkPage;
+import Pages.BasePages.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.interactions.Actions;
 
 public class GroupPage extends OkPage {
     private final By GROUP_FAST_PREFERENCES_BUTTON_LOCATOR = By.xpath("//*[contains(@class, 'u-menu_a toggle-dropdown')]");

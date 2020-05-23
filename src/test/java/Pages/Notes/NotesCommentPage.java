@@ -1,6 +1,6 @@
 package Pages.Notes;
 
-import Pages.OkPage;
+import Pages.BasePages.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
