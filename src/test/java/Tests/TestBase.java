@@ -1,7 +1,6 @@
 package Tests;
 
 import Pages.LoginPage;
-import Pages.MusicMainPage;
 import Pages.UserMainPage;
 import Tools.TechnopolisBot;
 import org.junit.*;

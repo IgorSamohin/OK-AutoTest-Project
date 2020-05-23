@@ -14,6 +14,7 @@ public abstract class BasePage {
 
     public BasePage(WebDriver driver) {
         this.driver = driver;
+        init();
     }
 
     protected void type(String text, By locator) {
@@ -44,6 +45,9 @@ public abstract class BasePage {
 
     public void refresh(){
         driver.get(driver.getCurrentUrl());
+        init();
     }
+
+    protected void init(){}
 
 }

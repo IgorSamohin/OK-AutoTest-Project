@@ -1,14 +1,11 @@
 package Pages.Notes;
 
-import Pages.BasePage;
-import org.junit.Assert;
+import Pages.BasePages.BasePage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.util.regex.Matcher;
 
 public class NoteLayerPage extends BasePage {
 
@@ -18,15 +15,10 @@ public class NoteLayerPage extends BasePage {
     private static final By DELETE_POST_BUTTON = By.xpath("//*[@id='hook_Block_ShortcutMenu']//a[contains(@hrefattrs,'deleteButton')]");
     private static final By ARROW_DOWN_LOCATOR = By.xpath("//*[@class='mlr_top_ac']");
     private boolean deleted = false;
-    public final boolean LAST, FIRST;
+    public boolean last, first;
 
     public NoteLayerPage(WebDriver driver) {
         super(driver);
-        new Actions(driver).pause(100).build().perform();
-        LAST = !driver.findElement(FORWARD_LOCATOR).getAttribute("class").contains("__active");
-        FIRST = !driver.findElement(BACK_LOCATOR).getAttribute("class").contains("__active");
-        System.out.println(LAST);
-        System.out.println(FIRST);
     }
 
     public NoteLayerPage forward(){
@@ -46,7 +38,7 @@ public class NoteLayerPage extends BasePage {
 
     public NotesPage deleteAll(){
         delete();
-        if (!LAST)
+        if (!last)
             return forward().deleteAll();
         else
             return close();
@@ -66,6 +58,13 @@ public class NoteLayerPage extends BasePage {
         deleted = true;
 
         return this;
+    }
+
+    @Override
+    protected void init(){
+        new Actions(driver).pause(100).build().perform();
+        last = !driver.findElement(FORWARD_LOCATOR).getAttribute("class").contains("__active");
+        first = !driver.findElement(BACK_LOCATOR).getAttribute("class").contains("__active");
     }
 
 

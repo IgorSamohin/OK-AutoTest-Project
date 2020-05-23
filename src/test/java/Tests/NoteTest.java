@@ -23,7 +23,7 @@ public class NoteTest extends TestBase {
     @Test
     public void NoCommentOnNoteTest() {
 
-        Assert.assertTrue(
+        Assert.assertTrue("Комментарии не выключены!",
                 new UserMainPage(driver)
                 .goToNotesPage()
                 .createNote()
