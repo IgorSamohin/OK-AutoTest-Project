@@ -34,8 +34,7 @@ public class MusicTrack {
     }
 
     public String getText() {
-        String s = track.getText();
-        return s;
+        return track.getText();
     }
 
 }

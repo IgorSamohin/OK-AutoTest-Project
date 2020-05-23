@@ -5,8 +5,6 @@ import org.openqa.selenium.WebDriver;
 import pageElements.MusicTrackList;
 
 public class MyMusicPage extends MusicBasePage {
-    private final String MUSIC_LIST_XPATH = "//wm-tracks-list2//wm-track";
-
     public MyMusicPage(WebDriver driver) {
         super(driver);
     }
