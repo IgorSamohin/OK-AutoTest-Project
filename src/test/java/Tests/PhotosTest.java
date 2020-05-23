@@ -1,15 +1,11 @@
 package Tests;
 
-import Pages.LoginPage;
 import Pages.UserMainPage;
-import Tools.TechnopolisBot;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.io.File;
-import java.util.concurrent.TimeUnit;
 
 public class PhotosTest extends TestBase {
 

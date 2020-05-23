@@ -1,7 +1,6 @@
 package Pages.Photos;
 
 import Pages.BasePages.OkPage;
-import org.omg.CosNaming.BindingIterator;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

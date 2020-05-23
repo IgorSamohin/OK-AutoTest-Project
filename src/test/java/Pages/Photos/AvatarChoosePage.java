@@ -19,6 +19,7 @@ public class AvatarChoosePage extends BasePage {
         click(IMAGE_LOCATOR);
         click(SUBMIT_LOCATOR);
         new Actions(driver).pause(500).build().perform();
+        refresh();
         return new UserMainPage(driver);
     }
 

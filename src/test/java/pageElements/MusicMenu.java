@@ -9,7 +9,6 @@ public class MusicMenu extends BasePage {
 
     private final By MY_MUSIC_BUTTON_XPATH = By.xpath("//*[@class='content_menu __60o4ct']//*[@data-l='t,library']");
 
-
     public MusicMenu(WebDriver driver) {
         super(driver);
     }
