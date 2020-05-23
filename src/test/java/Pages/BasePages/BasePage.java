@@ -27,7 +27,7 @@ public abstract class BasePage {
                 .click();
     }
 
-    protected void clickWithMouse(By locator)  throws TimeoutException {
+    protected void clickWithMouse(By locator) throws TimeoutException {
         WebElement element = (new WebDriverWait(driver, EXPLICIT_WAIT_TIME_IN_SECONDS))
                 .until(ExpectedConditions.visibilityOfElementLocated(locator));
         Actions action = new Actions(driver);
@@ -35,7 +35,7 @@ public abstract class BasePage {
                 .click();
     }
 
-    protected void clickBy(By locator, int xOffSet, int yOffSet)  throws TimeoutException {
+    protected void clickBy(By locator, int xOffSet, int yOffSet) throws TimeoutException {
         WebElement webElement = (new WebDriverWait(driver, EXPLICIT_WAIT_TIME_IN_SECONDS))
                 .until(ExpectedConditions.presenceOfElementLocated(locator));
         Actions builder = new Actions(driver);

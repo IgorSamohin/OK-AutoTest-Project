@@ -1,7 +1,7 @@
 package Tests;
 
 import Pages.LoginPage;
-import Pages.MusicMainPage;
+import Pages.Music.*;
 import Pages.UserMainPage;
 import Tools.TechnopolisBot;
 import org.junit.*;
@@ -22,7 +22,7 @@ public class TestBase {
     private StringBuffer verificationErrors = new StringBuffer();
 
     @Before
-    public void setUp(){
+    public void setUp() {
         driver = new ChromeDriver();
         driver.manage().timeouts().implicitlyWait(4, TimeUnit.SECONDS);
         driver.manage().window().maximize();
@@ -32,7 +32,7 @@ public class TestBase {
     }
 
     @After
-    public void tierDown(){
+    public void tearDown() {
         driver.get(baseUrl);
         new UserMainPage(driver)
                 .doLogout();
@@ -54,16 +54,16 @@ public class TestBase {
  * .sendKeys("туть обсолютный путь");
  * *
  * <p>
- * Тест 3 У созданной с параметром "отключить комментирование" заметки отключенно комментирование
- * *Сделать переход на заметки (возможно, с помощью еще одного пэйджа) из user main page
- * *Добавить пэйдж заметок
- * *нажатие на новую заметку
- * *Добавить пэйдж новой заметеи
- * *методы заполнения полей
- * *метод выбора критериев
- * *submit
- * *Добваить пэйдж комментирования
- * *Написать тест
+ * ~✔Тест 3 У созданной с параметром "отключить комментирование" заметки отключенно комментирование
+ * ✔*Сделать переход на заметки (возможно, с помощью еще одного пэйджа) из user main page
+ * ✔*Добавить пэйдж заметок
+ * ✔*нажатие на новую заметку
+ * ✔*Добавить пэйдж новой заметеи
+ * ✔*методы заполнения полей
+ * ✔*метод выбора критериев
+ * ✔*submit
+ * ✔*Добваить пэйдж комментирования
+ * ✔*Написать тест
  * <p>
  * ✔Тест 4 Проверка корректного создания группы
  * ✔*Сделать пэйдж групп

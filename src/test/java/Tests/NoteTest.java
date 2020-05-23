@@ -10,7 +10,7 @@ public class NoteTest extends TestBase {
 
     @Override
     @Before
-    public void setUp(){
+    public void setUp() {
         super.setUp();
         new UserMainPage(driver)
                 .goToNotesPage()
@@ -24,24 +24,24 @@ public class NoteTest extends TestBase {
 
         Assert.assertTrue(
                 new UserMainPage(driver)
-                .goToNotesPage()
-                .createNote()
-                .disableComments()
-                .writePost("some Text")
-                .sendPost()
-                .commentFirstNote()
-                .areCommentsDisabled()
+                        .goToNotesPage()
+                        .createNote()
+                        .disableComments()
+                        .writePost("some Text")
+                        .sendPost()
+                        .commentFirstNote()
+                        .areCommentsDisabled()
         );
     }
 
     @Override
     @After
-    public void tierDown(){
+    public void tearDown() {
         new UserMainPage(driver)
                 .clickOnUserMainPage()
                 .goToNotesPage()
                 .deleteAllNotes();
 
-        super.tierDown();
+        super.tearDown();
     }
 }

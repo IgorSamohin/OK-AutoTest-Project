@@ -2,6 +2,7 @@ package Pages;
 
 import Pages.Groups.GroupMainPage;
 import Pages.BasePages.*;
+import Pages.Music.MusicMainPage;
 import Pages.Notes.NotesPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -26,14 +27,18 @@ public class UserMainPage extends OkPage {
         return (new LoginPage(driver));
     }
 
-    public GroupMainPage goToGroupPage(){
+    public GroupMainPage goToGroupPage() {
         click(GROUP_LOCATOR);
         return (new GroupMainPage(driver));
     }
 
-    public NotesPage goToNotesPage(){
+    public NotesPage goToNotesPage() {
         click(NOTES_LOCATOR);
         return new NotesPage(driver);
+    }
+
+    public MusicMainPage goToMusicMainPage() {
+        return clickOnMusicMainPage();
     }
 
 }

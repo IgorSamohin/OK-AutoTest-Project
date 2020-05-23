@@ -5,7 +5,7 @@ import Pages.UserMainPage;
 import org.openqa.selenium.WebDriver;
 import pageElements.ToolBar;
 
-public class OkPage extends BasePage {
+public abstract class OkPage extends BasePage {
     private ToolBar toolBar;
 
     public OkPage(WebDriver driver) {
@@ -13,11 +13,11 @@ public class OkPage extends BasePage {
         toolBar = new ToolBar(driver);
     }
 
-    public UserMainPage clickOnUserMainPage(){
+    public UserMainPage clickOnUserMainPage() {
         return toolBar.clickOnUserMainPage();
     }
 
-    public MusicMainPage clickOnMusicMainPage(){
+    public MusicMainPage clickOnMusicMainPage() {
         return toolBar.clickOnMusicMainPage();
     }
 }
