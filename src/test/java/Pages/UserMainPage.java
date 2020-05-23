@@ -6,15 +6,9 @@ import Pages.Music.MusicMainPage;
 import Pages.Notes.NotesPage;
 import Pages.Photos.AvatarChoosePage;
 import Pages.Photos.PhotosPage;
-import org.junit.Assert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
 
 public class UserMainPage extends OkPage {
     private static final By USER_PROPERTIES_WINDOW_LOCATOR = By.xpath("//*[@class='ucard-mini toolbar_ucard js-toolbar-menu']");
@@ -58,7 +52,6 @@ public class UserMainPage extends OkPage {
         click(PHOTOS_LOCATOR);
         return new PhotosPage(driver);
     }
-
 
     public boolean hasAvatar(){
         WebElement avatar = driver.findElement(AVATAR_LOCATOR);
