@@ -1,16 +1,13 @@
 package Tests;
 
 import Pages.LoginPage;
-import Pages.Music.*;
 import Pages.UserMainPage;
 import Tools.TechnopolisBot;
 import org.junit.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import java.io.IOException;
 import java.util.concurrent.TimeUnit;
-import java.util.concurrent.TimeoutException;
 
 import static org.junit.Assert.fail;
 

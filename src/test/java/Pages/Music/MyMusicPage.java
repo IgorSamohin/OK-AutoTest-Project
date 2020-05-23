@@ -1,13 +1,8 @@
 package Pages.Music;
 
 import Pages.BasePages.MusicBasePage;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import pageElements.MusicTrack;
 import pageElements.MusicTrackList;
-
-import java.util.List;
 
 public class MyMusicPage extends MusicBasePage {
     private final String MUSIC_LIST_XPATH = "//wm-tracks-list2//wm-track";

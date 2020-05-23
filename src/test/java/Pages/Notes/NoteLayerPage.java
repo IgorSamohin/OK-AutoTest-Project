@@ -1,14 +1,11 @@
 package Pages.Notes;
 
-import Pages.BasePage;
-import org.junit.Assert;
+import Pages.BasePages.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.util.regex.Matcher;
 
 public class NoteLayerPage extends BasePage {
 
@@ -25,8 +22,6 @@ public class NoteLayerPage extends BasePage {
         new Actions(driver).pause(100).build().perform();
         LAST = !driver.findElement(FORWARD_LOCATOR).getAttribute("class").contains("__active");
         FIRST = !driver.findElement(BACK_LOCATOR).getAttribute("class").contains("__active");
-        System.out.println(LAST);
-        System.out.println(FIRST);
     }
 
     public NoteLayerPage forward(){

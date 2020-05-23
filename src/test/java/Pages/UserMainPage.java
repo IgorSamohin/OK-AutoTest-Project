@@ -7,7 +7,6 @@ import Pages.Notes.NotesPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-
 public class UserMainPage extends OkPage {
     private static final By NOTES_LOCATOR = By.xpath("//a[@data-l='t,userStatuses']");
     private static final By USER_PROPERTIES_WINDOW_LOCATOR = By.xpath("//*[@class='ucard-mini toolbar_ucard js-toolbar-menu']");

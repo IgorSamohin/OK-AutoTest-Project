@@ -5,13 +5,8 @@ import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import pageElements.MusicTrack;
-import pageElements.MusicTrackList;
 import pageElements.ToolBar;
-
-import java.io.IOException;
 
 public class MusicTest extends TestBase {
     private final String musicToSearch = "Кто пчелок уважает";

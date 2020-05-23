@@ -2,15 +2,9 @@ package Pages.BasePages;
 
 import Pages.Music.MusicSearchPage;
 import Pages.Music.MyMusicPage;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.yaml.snakeyaml.error.MarkedYAMLException;
 import pageElements.MusicMenu;
 import pageElements.MusicPlayer;
-import pageElements.MusicTrack;
-
-import java.util.List;
 
 public abstract class MusicBasePage extends OkPage {
     private MusicPlayer musicPlayer;

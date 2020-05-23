@@ -1,7 +1,6 @@
 package Tests;
 
 import Pages.Groups.*;
-import Pages.UserMainPage;
 import org.junit.After;
 import org.junit.Test;
 
