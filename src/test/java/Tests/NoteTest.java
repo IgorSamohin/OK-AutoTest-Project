@@ -1,5 +1,6 @@
 package Tests;
 
+import Pages.Notes.NotesCommentPage;
 import Pages.UserMainPage;
 import org.junit.After;
 import org.junit.Assert;
@@ -37,7 +38,7 @@ public class NoteTest extends TestBase {
     @Override
     @After
     public void tearDown() {
-        new UserMainPage(driver)
+        new NotesCommentPage(driver)
                 .clickOnUserMainPage()
                 .goToNotesPage()
                 .deleteAllNotes();

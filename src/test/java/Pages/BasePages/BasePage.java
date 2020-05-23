@@ -41,4 +41,9 @@ public abstract class BasePage {
         Actions builder = new Actions(driver);
         builder.moveToElement(webElement, xOffSet, yOffSet).click().build().perform();
     }
+
+    public void refresh(){
+        driver.get(driver.getCurrentUrl());
+    }
+
 }
