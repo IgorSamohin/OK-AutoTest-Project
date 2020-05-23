@@ -2,6 +2,7 @@ package Pages;
 
 import Pages.Groups.GroupMainPage;
 import Pages.BasePages.*;
+import Pages.Music.MusicMainPage;
 import Pages.Notes.NotesPage;
 import Pages.Photos.AvatarChoosePage;
 import Pages.Photos.PhotosPage;
@@ -16,7 +17,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 public class UserMainPage extends OkPage {
-    private static final By NOTES_LOCATOR = By.xpath("//a[@data-l='t,userStatuses']");
     private static final By USER_PROPERTIES_WINDOW_LOCATOR = By.xpath("//*[@class='ucard-mini toolbar_ucard js-toolbar-menu']");
     private static final By USER_LOGOUT_LOCATOR = By.xpath("//*[@data-l='t,logoutCurrentUser']");
     private static final By CONFIRM_EXIT = By.xpath("//*[@data-l='t,confirm']");
